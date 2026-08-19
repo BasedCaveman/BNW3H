@@ -7,8 +7,8 @@ import ProtocolSpine from "./ProtocolSpine.astro";
 interface Props { initialFocus?: "capital" | "hifas"; }
 const { initialFocus = "hifas" } = Astro.props;
 const entryNav = initialFocus === "hifas"
-  ? [["hifas", "Hifas"], ["capital", "Capital"]]
-  : [["capital", "Capital"], ["hifas", "Hifas"]];
+  ? [["hifas", "Hifas", "#hifas"], ["capital", "Capital", "/capital"]]
+  : [["capital", "Capital", "#capital"], ["hifas", "Hifas", "/"]];
 const intentActions = initialFocus === "hifas"
   ? [["hifa", "Quero contribuir em uma hifa"], ["capital", "Quero aportar capital"]]
   : [["capital", "Quero aportar capital"], ["hifa", "Quero contribuir em uma hifa"]];
@@ -23,7 +23,7 @@ const intentActions = initialFocus === "hifas"
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
     <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
-      {entryNav.map(([id, label]) => <a href={`#${id}`} data-nav={id}>{label}</a>)}
+      {entryNav.map(([id, label, href]) => <a href={href} data-nav={id}>{label}</a>)}
       <a href="#protocol" data-nav="protocol">Bossa Protocol</a>
       <a href="#sobre" data-nav="sobre">Sobre</a>
       <span class="nav-indicator" aria-hidden="true"></span>
