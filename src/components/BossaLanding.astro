@@ -1,0 +1,318 @@
+---
+import "../styles/bossa.css";
+
+interface Props { initialFocus?: "capital" | "hifas"; }
+const { initialFocus = "hifas" } = Astro.props;
+
+const hifas = [
+  ["clima", "Resiliência climática", "Dados, adaptação territorial e infraestrutura para responder ao que já mudou."],
+  ["alimento", "Soberania alimentar", "Agrofloresta, cadeias curtas e alimento como tecnologia de autonomia."],
+  ["biomas", "Restauração de biomas", "Cuidado ecológico, regeneração urbana e recuperação de paisagens vivas."],
+  ["energia", "Energias renováveis", "Soluções distribuídas que ampliam autonomia e capacidade local."],
+  ["ia", "IA descentralizada", "Inteligência compartilhada com dados, protocolos e benefícios mais distribuídos."],
+  ["depin", "DePIN", "Infraestrutura física coordenada por redes, presença e incentivos verificáveis."],
+  ["desci", "DeSci", "Ciência aberta, pesquisa aplicada e novos modos de financiar conhecimento."],
+  ["salutogenia", "Salutogenia", "Saúde como produção contínua de condições para viver, criar e pertencer."],
+];
+---
+
+<div class="site-shell" data-initial-focus={initialFocus}>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topbar" data-header>
+    <a class="logo" href="#inicio" aria-label="Bossa Nova Web3 Hub — início">
+      <img src="/brand/bossa-nova3-hub-logo.jpeg" alt="Bossa Nova3 Hub" width="500" height="500" />
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
+      <a href="#capital" data-nav="capital">Capital</a>
+      <a href="#hifas" data-nav="hifas">Hifas</a>
+      <a href="#protocol" data-nav="protocol">Bossa Protocol</a>
+      <a href="#sobre" data-nav="sobre">Sobre</a>
+      <span class="nav-indicator" aria-hidden="true"></span>
+    </nav>
+    <div class="theme-switcher" role="group" aria-label="Atmosfera do site">
+      <button type="button" data-set-theme="manha" data-short="M" aria-label="Atmosfera da manhã" aria-pressed="false">Manhã</button>
+      <button type="button" data-set-theme="tarde" data-short="T" aria-label="Atmosfera da tarde" aria-pressed="false">Tarde</button>
+      <button type="button" data-set-theme="noite" data-short="N" aria-label="Atmosfera da noite" aria-pressed="false">Noite</button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="gateway" id="inicio" aria-label="Duas portas de entrada para o Bossa Nova Web3 Hub">
+      <div class="gateway-field capital-field" id="capital" data-section="capital">
+        <div class="coordinate" aria-hidden="true">22°54′15″S<br />43°12′39″W</div>
+        <div class="field-copy" data-reveal>
+          <p class="eyebrow blue">Capital</p>
+          <h1>Capital para<br />o que precisa<br />durar<span class="blue">.</span></h1>
+          <p class="lead">Risco visível. Recurso rastreável.<br />Impacto verificável.</p>
+        </div>
+
+        <div class="capital-flow" data-reveal>
+          <p class="micro-title blue">Fluxo correto</p>
+          <ol>
+            <li><span>01</span><strong>Capital</strong><small>propósito claro</small></li>
+            <li><span>02</span><strong>Protocolo</strong><small>regras explícitas</small></li>
+            <li><span>03</span><strong>Hifas</strong><small>alocação localizada</small></li>
+            <li><span>04</span><strong>Valor</strong><small>evidência verificável</small></li>
+          </ol>
+        </div>
+
+        <div class="evidence" data-reveal>
+          <p class="micro-title blue">Evidência &amp; gates</p>
+          <div class="evidence-grid">
+            <article><b>01</b><strong>Alocação diligente</strong><p>Recursos chegam com propósito e responsabilidades claros.</p></article>
+            <article><b>02</b><strong>Fluxo rastreável</strong><p>Entradas, alocações e destinos dos recursos.</p></article>
+            <article><b>03</b><strong>Impacto verificável</strong><p>Evidência, aprendizado e novos ciclos.</p></article>
+          </div>
+        </div>
+        <a class="cta cta-blue" href="#tese-capital" data-reveal><span>Conhecer a tese</span><i>Capital de impacto + liquidez onchain</i></a>
+      </div>
+
+      <aside class="protocol-spine" aria-label="Bossa Protocol" data-reveal>
+        <div class="protocol-core">
+          <p>Bossa</p><p>Protocol</p>
+          <span>artefatos + mecânicas para coordenar recursos</span>
+        </div>
+        <p class="protocol-note">O Bossa Protocol agrega artefatos e mecânicas. A PCdRC é seu primeiro artefato em formação.</p>
+        <div class="artifact-list">
+          <button type="button" class="artifact is-current" aria-expanded="true"><span>PCdRC</span><small>primeiro artefato</small><b>Agora</b></button>
+          <button type="button" class="artifact" aria-expanded="false"><span>QF / Q/ACC</span><small>alocação</small><b>Em desenho</b></button>
+          <button type="button" class="artifact" aria-expanded="false"><span>RetroPGF</span><small>reconhecimento</small><b>Em desenho</b></button>
+          <button type="button" class="artifact" aria-expanded="false"><span>Governança</span><small>decisão</small><b>Em desenho</b></button>
+        </div>
+      </aside>
+
+      <div class="gateway-field hifas-field" id="hifas" data-section="hifas">
+        <div class="field-copy" data-reveal>
+          <p class="eyebrow orange">Hifas</p>
+          <h2>Seu recurso<br />tem onde<br />criar raiz<span class="orange">.</span></h2>
+          <p class="lead">Escolha uma frente. Declare o que traz.<br />Construa reciprocidade.</p>
+        </div>
+        <div class="constellation" data-reveal>
+          <img src="/art/hifas-constellation.png" alt="Constelação de oito hifas conectadas por uma rede micelial" width="1254" height="1254" />
+        </div>
+        <div class="hifa-selector" data-reveal>
+          <div class="hifa-tabs" role="tablist" aria-label="Escolha uma hifa">
+            {hifas.map(([id, title], index) => (
+              <button type="button" role="tab" id={`tab-${id}`} aria-controls={`panel-${id}`} aria-selected={index === 0 ? "true" : "false"} tabindex={index === 0 ? "0" : "-1"} data-hifa={id}>{title}</button>
+            ))}
+          </div>
+          <div class="hifa-panels">
+            {hifas.map(([id, title, copy], index) => (
+              <div role="tabpanel" id={`panel-${id}`} aria-labelledby={`tab-${id}`} hidden={index !== 0}>
+                <span>Hifa ativa</span><strong>{title}</strong><p>{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p class="resource-line" data-reveal>Tempo · conhecimento · espaço · código · cuidado · capital</p>
+        <a class="cta cta-orange" href="#participar" data-reveal><span>Localizar minha contribuição</span><i>Entrar por uma hifa</i></a>
+      </div>
+    </section>
+
+    <section class="protocol-section section-frame" id="protocol" data-section="protocol">
+      <div class="section-index" data-reveal><span>01</span><p>Infraestrutura de coordenação</p></div>
+      <div class="section-copy" data-reveal>
+        <p class="eyebrow orange">Bossa Protocol</p>
+        <h2>O impacto começa desenhando o fluxo.</h2>
+        <p>Uma camada de artefatos, acordos e mecânicas para transformar recursos dispersos em capacidade coletiva — com contexto antes da automação e integridade antes da escala.</p>
+      </div>
+      <div class="protocol-map" data-reveal>
+        <article class="map-node"><span>Entra</span><strong>Recursos</strong><p>Dinheiro, tempo, conhecimento, acesso e infraestrutura.</p></article>
+        <article class="map-node accent"><span>Coordena</span><strong>Bossa Protocol</strong><p>Critérios, artefatos, governança e rastreabilidade.</p></article>
+        <article class="map-node"><span>Ativa</span><strong>Hifas</strong><p>Verticais ligadas a necessidades reais e experimentos territoriais.</p></article>
+        <article class="map-node"><span>Retorna</span><strong>Valor</strong><p>Evidência, aprendizado, reconhecimento e novos ciclos.</p></article>
+      </div>
+    </section>
+
+    <section class="capital-thesis section-frame" id="tese-capital">
+      <div class="section-index" data-reveal><span>02</span><p>Uma tese, dois trilhos</p></div>
+      <div class="section-copy" data-reveal>
+        <p class="eyebrow blue">Capital regenerativo</p>
+        <h2>Do capital paciente à liquidez programável, sem dois discursos.</h2>
+        <p>Para investidores de impacto, oferece legibilidade de risco, governança e indicadores. Para degen e regen, abre espaço para mecanismos transparentes e comunitários. O denominador comum é integridade operacional.</p>
+      </div>
+      <div class="thesis-lanes" data-reveal>
+        <article><span>Impacto</span><strong>Capital paciente</strong><ul><li>Uso de recursos explícito</li><li>Resultados acompanháveis</li><li>Governança e responsabilidades</li></ul></article>
+        <div class="thesis-bridge"><small>O mesmo campo</small><b>degen<br />↔<br />regen</b><p>Trilhos diferentes. Integridade comum.</p></div>
+        <article><span>Onchain</span><strong>Liquidez programável</strong><ul><li>Quadratic Funding</li><li>Reconhecimento retroativo</li><li>Tesouraria com assinatura humana</li></ul></article>
+      </div>
+      <p class="disclosure" data-reveal>Esta página apresenta uma tese em estruturação. Não constitui oferta pública, promessa de retorno ou recomendação de investimento.</p>
+    </section>
+
+    <section class="roadmap section-frame" id="roadmap">
+      <div class="section-index" data-reveal><span>03</span><p>Onde estamos</p></div>
+      <div class="section-copy" data-reveal>
+        <p class="eyebrow teal">Roadmap vivo</p>
+        <h2>Clareza sobre o agora. Espaço para o que ainda vai emergir.</h2>
+      </div>
+      <ol class="timeline" data-reveal>
+        <li class="now"><span>Agora</span><strong>PCdRC em formação</strong><p>Pessoas reais, primeira cartografia de recursos, desenho de critérios e articulação das hifas.</p></li>
+        <li class="design"><span>Em desenho</span><strong>Bossa Protocol v0.1</strong><p>Governança, QF / Q-ACC, reconhecimento retroativo, entidade e guardrails para recursos reais.</p></li>
+        <li class="horizon"><span>Horizonte</span><strong>Laboratórios vivos</strong><p>CliFFVillage Joatinga, articulação com Cultiva e Maré, pop-up villages e escalabilidade entre territórios.</p></li>
+      </ol>
+    </section>
+
+    <section class="about section-frame" id="sobre" data-section="sobre">
+      <div class="section-index" data-reveal><span>04</span><p>O organismo</p></div>
+      <div class="section-copy" data-reveal>
+        <p class="eyebrow orange">Sobre o Hub</p>
+        <h2>Uma plataforma viva entre tecnologia, cultura, território e impacto real.</h2>
+        <p>O BNW3H funciona como um orquestrador de valor: conecta criadores, investidores, comunidades, iniciativas culturais e ambientais — traduzindo inovação em transformação concreta, local e global.</p>
+      </div>
+      <div class="about-principles" data-reveal>
+        <article><span>01</span><strong>Território antes da abstração</strong><p>Joatinga e Maré como origem e horizonte de experimentação.</p></article>
+        <article><span>02</span><strong>Recursos além do dinheiro</strong><p>Tempo, conhecimento, acesso, infraestrutura e capital no mesmo mapa.</p></article>
+        <article><span>03</span><strong>Tecnologia como meio</strong><p>Blockchain para transparência, rastreabilidade e governança distribuída.</p></article>
+      </div>
+    </section>
+
+    <section class="facilitator section-frame" aria-labelledby="facilitator-title">
+      <div class="facilitator-card" data-reveal>
+        <img src="/brand/re3-element-laranja-light-pt.png" alt="[Re]3 Reregeneradora — Antes de acelerar, eco-localize-se." width="900" height="1020" />
+      </div>
+      <div class="facilitator-copy" data-reveal>
+        <p class="eyebrow orange">Facilitação</p>
+        <h2 id="facilitator-title">BNW3H é o organismo.<br /><span>[Re]3 facilita.</span></h2>
+        <p>O Hub mantém marca, território, operação, governança e direitos econômicos próprios. A [Re]3 apoia leitura de contexto, desenho de governança e acesso a conexões — sem assumir propriedade, economia ou autoridade do projeto.</p>
+        <small>Compartilhar um campo não significa compartilhar automaticamente operação, capital, IP, estrutura legal ou métricas.</small>
+      </div>
+    </section>
+
+    <section class="participate" id="participar">
+      <div data-reveal>
+        <p class="eyebrow orange">A piscina começa com uma declaração</p>
+        <h2>Como você quer contribuir?</h2>
+        <p>Escolha sua porta de entrada. O canal direto de manifestação será conectado antes da publicação.</p>
+        <div class="participate-actions" role="group" aria-label="Escolha como quer participar">
+          <button type="button" data-intent="capital">Quero aportar capital</button>
+          <button type="button" data-intent="hifa">Quero contribuir em uma hifa</button>
+        </div>
+        <output class="intent-output" aria-live="polite">Selecione uma porta de entrada para preparar sua manifestação.</output>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="/brand/bossa-nova3-hub-logo.jpeg" alt="Bossa Nova3 Hub" width="500" height="500" />
+    <p>BNW3H é o organismo. <strong>[Re]3</strong> facilita.</p>
+    <p class="footer-meta">Rio de Janeiro · versão 0.1 · tese em formação</p>
+  </footer>
+</div>
+
+<script>
+  const shell = document.querySelector<HTMLElement>(".site-shell");
+  const root = document.documentElement;
+  const metaTheme = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+  const themeButtons = [...document.querySelectorAll<HTMLButtonElement>("[data-set-theme]")];
+  const themeColors: Record<string, string> = { manha: "#f3efe7", tarde: "#e8d2b3", noite: "#0f1725" };
+  const syncThemeButtons = (theme: string) => {
+    themeButtons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.setTheme === theme)));
+    if (metaTheme) metaTheme.content = themeColors[theme] || themeColors.manha;
+  };
+  const applyTheme = (theme: string) => {
+    root.dataset.theme = theme;
+    localStorage.setItem("bnw3h-theme", theme);
+    syncThemeButtons(theme);
+  };
+  syncThemeButtons(root.dataset.theme || "manha");
+  themeButtons.forEach((button) => button.addEventListener("click", () => {
+    const theme = button.dataset.setTheme || "manha";
+    if (theme === root.dataset.theme) return;
+    if (document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches) document.startViewTransition(() => applyTheme(theme));
+    else applyTheme(theme);
+  }));
+
+  const menuToggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const nav = document.querySelector<HTMLElement>(".main-nav");
+  const closeMenu = () => {
+    menuToggle?.setAttribute("aria-expanded", "false");
+    nav?.classList.remove("is-open");
+    if (menuToggle) menuToggle.textContent = "Menu";
+  };
+  menuToggle?.addEventListener("click", () => {
+    const open = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!open));
+    menuToggle.textContent = open ? "Menu" : "Fechar";
+    nav?.classList.toggle("is-open", !open);
+  });
+  nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
+
+  const indicator = document.querySelector<HTMLElement>(".nav-indicator");
+  const navLinks = [...document.querySelectorAll<HTMLAnchorElement>("[data-nav]")];
+  const moveIndicator = (link?: HTMLAnchorElement) => {
+    if (!indicator || !nav || !link || innerWidth < 800) return;
+    const navRect = nav.getBoundingClientRect();
+    const rect = link.getBoundingClientRect();
+    indicator.style.transform = `translateX(${rect.left - navRect.left}px) scaleX(${rect.width})`;
+    navLinks.forEach((item) => item.classList.toggle("is-active", item === link));
+  };
+  const sections = [...document.querySelectorAll<HTMLElement>("[data-section]")];
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    const id = (visible.target as HTMLElement).dataset.section;
+    moveIndicator(navLinks.find((link) => link.dataset.nav === id));
+  }, { rootMargin: "-20% 0px -60%", threshold: [0.05, 0.2, 0.5] });
+  sections.forEach((section) => sectionObserver.observe(section));
+  addEventListener("resize", () => moveIndicator(navLinks.find((link) => link.classList.contains("is-active"))));
+
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealItems = [...document.querySelectorAll<HTMLElement>("[data-reveal]")];
+  if (reduced) revealItems.forEach((item) => item.dataset.revealed = "true");
+  else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        (entry.target as HTMLElement).dataset.revealed = "true";
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
+    revealItems.forEach((item, index) => {
+      item.style.setProperty("--reveal-delay", `${Math.min(index % 3, 2) * 50}ms`);
+      revealObserver.observe(item);
+    });
+  }
+
+  document.querySelectorAll<HTMLButtonElement>(".artifact").forEach((button) => button.addEventListener("click", () => {
+    document.querySelectorAll<HTMLButtonElement>(".artifact").forEach((item) => {
+      const current = item === button;
+      item.classList.toggle("is-current", current);
+      item.setAttribute("aria-expanded", String(current));
+    });
+  }));
+
+  const hifaTabs = [...document.querySelectorAll<HTMLButtonElement>("[data-hifa]")];
+  const activateHifa = (tab: HTMLButtonElement) => {
+    hifaTabs.forEach((item) => {
+      const active = item === tab;
+      item.setAttribute("aria-selected", String(active));
+      item.tabIndex = active ? 0 : -1;
+      const panel = document.getElementById(`panel-${item.dataset.hifa}`);
+      if (panel) panel.hidden = !active;
+    });
+  };
+  hifaTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => activateHifa(tab));
+    tab.addEventListener("keydown", (event) => {
+      if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+      event.preventDefault();
+      const direction = event.key === "ArrowRight" ? 1 : -1;
+      const next = hifaTabs[(index + direction + hifaTabs.length) % hifaTabs.length];
+      activateHifa(next); next.focus();
+    });
+  });
+
+  const output = document.querySelector<HTMLOutputElement>(".intent-output");
+  document.querySelectorAll<HTMLButtonElement>("[data-intent]").forEach((button) => button.addEventListener("click", () => {
+    document.querySelectorAll<HTMLButtonElement>("[data-intent]").forEach((item) => item.classList.toggle("is-selected", item === button));
+    if (!output) return;
+    output.value = button.dataset.intent === "capital"
+      ? "Porta selecionada: capital. Próximo passo: conectar o canal de diligência e apresentação da tese."
+      : "Porta selecionada: hifas. Próximo passo: conectar a cartografia de recursos e disponibilidade.";
+  }));
+
+  if (shell?.dataset.initialFocus === "capital" && location.pathname.startsWith("/capital")) requestAnimationFrame(() => document.getElementById("capital")?.scrollIntoView({ block: "start" }));
+</script>

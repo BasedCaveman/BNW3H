@@ -1,0 +1,114 @@
+---
+interface Props {
+  variant?: "hifas" | "capital";
+}
+
+const { variant = "hifas" } = Astro.props;
+---
+
+<section class:list={["final-cta", `final-${variant}`]} id="contato">
+  <div>
+    <p>{variant === "capital" ? "CAPITAL COM CONTEXTO" : "O COMUM COMEÇA AGORA"}</p>
+    <h2>
+      {variant === "capital"
+        ? "Traga sua tese. Vamos localizar o encaixe."
+        : "Traga um recurso. Encontre uma hifa."}
+    </h2>
+    <p class="body">
+      {variant === "capital"
+        ? "Buscamos interlocutores que combinam rigor de diligência, horizonte de impacto e abertura para novos rails de coordenação."
+        : "Buscamos pessoas e projetos dispostos a compartilhar capacidade, aprender em público e construir acordos antes de escalar."}
+    </p>
+    <a href={variant === "capital" ? "/#contato" : "/capital#contato"}>
+      {variant === "capital" ? "Também quero contribuir" : "Também quero aportar"}<span aria-hidden="true">↗</span>
+    </a>
+    <small>Canal direto de manifestação de interesse será conectado antes da publicação.</small>
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    padding: clamp(6rem, 13vw, 12rem) 1rem;
+    background: #d9ff6b;
+    color: #07120f;
+    text-align: center;
+  }
+
+  .final-capital {
+    background: #f2a65a;
+    color: #1a120b;
+  }
+
+  .final-cta > div {
+    width: min(100%, 70rem);
+    margin-inline: auto;
+  }
+
+  .final-cta > div > p:first-child {
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+  }
+
+  h2 {
+    max-width: 13ch;
+    margin: 1.5rem auto 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.2rem, 7vw, 7rem);
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: -0.06em;
+    text-wrap: balance;
+  }
+
+  .body {
+    max-width: 40rem;
+    margin: 2rem auto 0;
+    color: #344b30;
+    line-height: 1.7;
+  }
+
+  .final-capital .body {
+    color: #5d412b;
+  }
+
+  a {
+    min-height: 3.5rem;
+    margin-top: 2rem;
+    padding: 0.9rem 1.15rem 0.9rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 999px;
+    background: #07120f;
+    color: #f1ecdf;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .final-capital a {
+    background: #1a120b;
+  }
+
+  a span {
+    width: 2rem;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #f1ecdf;
+    color: #07120f;
+  }
+
+  small {
+    display: block;
+    margin-top: 1rem;
+    color: #4c6246;
+    font-size: 0.65rem;
+  }
+
+  .final-capital small {
+    color: #674830;
+  }
+</style>

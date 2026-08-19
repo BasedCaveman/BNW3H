@@ -1,0 +1,52 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  socialTitle?: string;
+}
+
+const {
+  title = "Bossa Nova Web3 Hub",
+  description = "Tecnologia, cultura, território e capital coordenados para regenerar valor.",
+  socialTitle = title,
+} = Astro.props;
+
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+---
+
+<!doctype html>
+<html lang="pt-BR" data-theme="manha">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3efe7" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:image:alt" content="Bossa Nova Web3 Hub, recursos compartilhados e impacto rastreável" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/og.png" />
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem("bnw3h-theme");
+        const hour = new Date().getHours();
+        const automatic = hour >= 5 && hour < 12 ? "manha" : hour < 18 ? "tarde" : "noite";
+        const theme = ["manha", "tarde", "noite"].includes(saved || "") ? saved : automatic;
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

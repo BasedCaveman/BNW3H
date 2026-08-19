@@ -1,0 +1,219 @@
+<section class="territory" id="territorio">
+  <div class="section-head">
+    <p class="kicker">04 / ORIGEM TERRITORIAL</p>
+    <h2>Da casa onde a Bossa nasceu à floresta urbana que insiste em crescer.</h2>
+  </div>
+
+  <div class="map">
+    <div class="place cliffside">
+      <span>JOATINGA</span>
+      <strong>CliffSide</strong>
+      <p>Hotel boutique de Marcelo e casa historicamente ligada ao nascimento da Bossa Nova. Território de origem e ativação do Hub.</p>
+    </div>
+    <div class="current" aria-hidden="true">
+      <i></i><i></i><i></i>
+      <span>RIO DE JANEIRO</span>
+    </div>
+    <div class="place cultiva">
+      <span>MARÉ</span>
+      <strong>Cultiva</strong>
+      <p>Agrofloresta urbana fundada por Diogo, com presença ao lado do CliffSide e na Favela da Maré. Entidade própria e parceira territorial.</p>
+    </div>
+  </div>
+
+  <div class="villages">
+    <p>Os CliFFVillages são concebidos como laboratórios vivos temporários. Joatinga vem primeiro. Maré amplia o campo. Datas ainda não foram confirmadas.</p>
+    <ol>
+      <li><span>VERÃO</span> Gênese do Círculo Bossa1 e ignição da PCdRC</li>
+      <li><span>OUTONO</span> Hibridização com redes e cidades temporárias</li>
+      <li><span>INVERNO</span> Ativação do CliFFVillage Joatinga</li>
+      <li><span>PRIMAVERA</span> Expansão para o CliFFVillage Maré</li>
+    </ol>
+  </div>
+</section>
+
+<style>
+  .territory {
+    padding: clamp(5rem, 10vw, 9rem) 1rem;
+    overflow: hidden;
+    background: #07120f;
+    color: #f1ecdf;
+  }
+
+  .section-head,
+  .map,
+  .villages {
+    width: min(100%, 80rem);
+    margin-inline: auto;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(8rem, 0.55fr) minmax(0, 2fr);
+    gap: 2rem;
+  }
+
+  .kicker,
+  .place > span,
+  li span {
+    color: #d9ff6b;
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  h2 {
+    max-width: 16ch;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.7rem, 5.7vw, 5.8rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+  }
+
+  .map {
+    min-height: 36rem;
+    margin-top: clamp(4rem, 8vw, 7rem);
+    display: grid;
+    grid-template-columns: 1fr 0.7fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+  }
+
+  .map::before {
+    content: "";
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, #d9ff6b, #ffffff18 20%, #ffffff18 80%, #d9ff6b);
+  }
+
+  .place {
+    min-height: 28rem;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px solid #ffffff1c;
+    border-radius: 52% 48% 42% 58% / 55% 43% 57% 45%;
+    background: radial-gradient(circle at 50% 25%, #d9ff6b12, #0d241c 55%, #081510);
+  }
+
+  .cultiva {
+    border-radius: 44% 56% 57% 43% / 47% 58% 42% 53%;
+    background: radial-gradient(circle at 50% 25%, #2ac89424, #0b2a20 55%, #081510);
+  }
+
+  .place strong {
+    margin-top: 1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.5rem, 5vw, 4.8rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .place p {
+    margin-top: 1rem;
+    color: #9daba4;
+    font-size: 0.82rem;
+    line-height: 1.65;
+  }
+
+  .current {
+    position: relative;
+    z-index: 2;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border: 1px solid #ffffff22;
+    border-radius: 50%;
+    background: #07120f;
+  }
+
+  .current i {
+    position: absolute;
+    inset: 16%;
+    border: 1px solid #d9ff6b44;
+    border-radius: 50%;
+  }
+
+  .current i:nth-child(2) { inset: 30%; }
+  .current i:nth-child(3) { inset: 44%; background: #d9ff6b; box-shadow: 0 0 2rem #d9ff6b; }
+
+  .current span {
+    position: absolute;
+    bottom: 20%;
+    color: #8d9a94;
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+  }
+
+  .villages {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: clamp(2rem, 8vw, 7rem);
+    margin-top: clamp(3rem, 6vw, 5rem);
+    padding-top: 3rem;
+    border-top: 1px solid #ffffff17;
+  }
+
+  .villages > p {
+    color: #9daba4;
+    line-height: 1.75;
+  }
+
+  ol {
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 1rem;
+    padding-block: 1rem;
+    border-top: 1px solid #ffffff17;
+    color: #bdc6c1;
+    font-size: 0.84rem;
+  }
+
+  @media (max-width: 52rem) {
+    .map {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .map::before {
+      display: none;
+    }
+
+    .current {
+      display: none;
+    }
+
+    .place {
+      min-height: 24rem;
+    }
+  }
+
+  @media (max-width: 38rem) {
+    .section-head,
+    .map,
+    .villages {
+      grid-template-columns: 1fr;
+    }
+
+    .place {
+      min-height: 26rem;
+    }
+
+    li {
+      grid-template-columns: 5.5rem 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,170 @@
+<section class="hyphae" id="hifas">
+  <div class="section-head">
+    <p class="kicker">03 / PORTAS DE ENTRADA</p>
+    <div>
+      <h2>Qual recurso quer circular através de você?</h2>
+      <p>
+        As hifas são frentes conectadas de ação. Estas portas de entrada estão
+        em formação e ajudam a localizar como cada pessoa ou projeto pode contribuir.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <article class="featured">
+      <span>01 / TERRITÓRIO</span>
+      <h3>Agrofloresta, cuidado e ativação local</h3>
+      <p>Para quem atua com regeneração ecológica, urbanismo, alimento e infraestrutura territorial.</p>
+      <b>Joatinga ↔ Maré</b>
+    </article>
+    <article>
+      <span>02 / CULTURA</span>
+      <h3>Arte, memória e hospitalidade</h3>
+      <p>Para criadores, produtores, anfitriões e pessoas que ativam encontros transformadores.</p>
+      <b>Criar presença</b>
+    </article>
+    <article>
+      <span>03 / TECNOLOGIA</span>
+      <h3>Protocolos, dados e ferramentas</h3>
+      <p>Para builders que querem tornar coordenação, rastreabilidade e governança mais acessíveis.</p>
+      <b>Construir infraestrutura</b>
+    </article>
+    <article>
+      <span>04 / FINANÇAS</span>
+      <h3>Capital, grants e mecanismos ReFi</h3>
+      <p>Para quem desenha ou aporta recursos com horizonte de impacto, transparência e aprendizado.</p>
+      <b>Ativar recursos</b>
+    </article>
+    <article>
+      <span>05 / CONHECIMENTO</span>
+      <h3>Pesquisa, educação e documentação</h3>
+      <p>Para quem transforma prática em conhecimento aberto, mensurável e compartilhável.</p>
+      <b>Ampliar capacidade</b>
+    </article>
+  </div>
+</section>
+
+<style>
+  .hyphae {
+    padding: clamp(5rem, 10vw, 9rem) 1rem;
+    background: #d9ff6b;
+    color: #07120f;
+  }
+
+  .section-head,
+  .grid {
+    width: min(100%, 80rem);
+    margin-inline: auto;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(8rem, 0.55fr) minmax(0, 2fr);
+    gap: 2rem;
+  }
+
+  .kicker,
+  article > span {
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  h2 {
+    max-width: 14ch;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.8rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+  }
+
+  .section-head div > p {
+    max-width: 42rem;
+    margin-top: 2rem;
+    color: #30432d;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: clamp(4rem, 8vw, 7rem);
+    border-top: 1px solid #07120f42;
+    border-left: 1px solid #07120f42;
+  }
+
+  article {
+    min-height: 21rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #07120f42;
+    border-bottom: 1px solid #07120f42;
+  }
+
+  .featured {
+    grid-column: span 2;
+    background: #07120f;
+    color: #f1ecdf;
+  }
+
+  article > span {
+    color: #3f5739;
+  }
+
+  .featured > span {
+    color: #d9ff6b;
+  }
+
+  h3 {
+    max-width: 17ch;
+    margin-top: auto;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  article p {
+    max-width: 30rem;
+    margin-top: 1rem;
+    color: #344b30;
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+
+  .featured p {
+    color: #92a198;
+  }
+
+  article b {
+    margin-top: 1.5rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 50rem) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 36rem) {
+    .section-head,
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .featured {
+      grid-column: auto;
+    }
+
+    article {
+      min-height: 18rem;
+    }
+  }
+</style>

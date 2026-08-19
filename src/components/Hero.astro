@@ -1,0 +1,341 @@
+---
+interface Props {
+  variant?: "hifas" | "capital";
+}
+
+const { variant = "hifas" } = Astro.props;
+
+const content = variant === "capital"
+  ? {
+      eyebrow: "Capital que enxerga o sistema inteiro",
+      title: "Financie impacto real sem perder a rastreabilidade.",
+      body: "O Bossa Nova Web3 Hub conecta capital paciente, liquidez onchain e recursos não financeiros a experimentos regenerativos com origem territorial no Rio de Janeiro.",
+      cta: "Conhecer a tese de capital",
+      href: "#tese",
+      note: "Investimento de impacto + DeFi + bens comuns",
+    }
+  : {
+      eyebrow: "Uma infraestrutura para chegar junto",
+      title: "O comum começa com aquilo que você pode compartilhar.",
+      body: "Entre por uma hifa, ofereça tempo, conhecimento, acesso, infraestrutura ou capital. A Piscina Comum de Recursos Compartilháveis transforma excedentes isolados em capacidade coletiva.",
+      cta: "Encontrar minha hifa",
+      href: "#hifas",
+      note: "Pessoas + projetos + territórios",
+    };
+---
+
+<section class:list={["hero", `hero-${variant}`]}>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow"><span></span>{content.eyebrow}</p>
+      <h1>{content.title}</h1>
+      <p class="lede">{content.body}</p>
+      <div class="actions">
+        <a class="primary" href={content.href}>{content.cta}<span aria-hidden="true">↘</span></a>
+        <a class="secondary" href={variant === "capital" ? "/" : "/capital"}>
+          {variant === "capital" ? "Quero contribuir" : "Quero aportar"}
+        </a>
+      </div>
+      <p class="hero-note">{content.note}</p>
+    </div>
+
+    <div class="pool" aria-label="A piscina comum conecta pessoas, projetos, recursos e território">
+      <span class="pool-label">PCdRC</span>
+      <strong>Piscina<br />Comum</strong>
+      <small>recursos compartilháveis</small>
+      <i class="orbit orbit-one"><b>PESSOAS</b></i>
+      <i class="orbit orbit-two"><b>PROJETOS</b></i>
+      <i class="orbit orbit-three"><b>TERRITÓRIO</b></i>
+      <i class="orbit orbit-four"><b>CAPITAL</b></i>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: calc(100svh - 5.5rem);
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    padding: clamp(3rem, 8vw, 7rem) 1rem clamp(4rem, 9vw, 8rem);
+    border-bottom: 1px solid #ffffff12;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    background-image:
+      linear-gradient(#ffffff0b 1px, transparent 1px),
+      linear-gradient(90deg, #ffffff0b 1px, transparent 1px);
+    background-size: 5rem 5rem;
+    mask-image: linear-gradient(to bottom, black, transparent 85%);
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: min(75vw, 60rem);
+    aspect-ratio: 1;
+    right: -20rem;
+    top: -23rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, #d9ff6b26, #2ac89410 38%, transparent 68%);
+    filter: blur(2rem);
+  }
+
+  .hero-capital .hero-glow {
+    background: radial-gradient(circle, #f2a65a26, #2ac89410 38%, transparent 68%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 80rem);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
+    align-items: center;
+    gap: clamp(3rem, 8vw, 8rem);
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1.5rem;
+    color: #d9ff6b;
+    font-size: 0.73rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .hero-capital .eyebrow {
+    color: #f2a65a;
+  }
+
+  .eyebrow span {
+    width: 2.5rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  h1 {
+    max-width: 13ch;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.4rem, 7.4vw, 7.2rem);
+    font-weight: 400;
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+    text-wrap: balance;
+  }
+
+  .lede {
+    max-width: 40rem;
+    margin-top: 2rem;
+    color: #b8c2bc;
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .actions a {
+    min-height: 3.35rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 0.83rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .primary {
+    gap: 2.25rem;
+    padding: 0.9rem 1.15rem 0.9rem 1.5rem;
+    background: #d9ff6b;
+    color: #07120f;
+  }
+
+  .hero-capital .primary {
+    background: #f2a65a;
+  }
+
+  .primary span {
+    width: 2rem;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #07120f;
+    color: #f1ecdf;
+  }
+
+  .secondary {
+    padding: 0.9rem 1.5rem;
+    border: 1px solid #ffffff26;
+    color: #d6ddd9;
+  }
+
+  .hero-note {
+    margin-top: 1.2rem;
+    color: #718079;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .pool {
+    width: min(28rem, 100%);
+    aspect-ratio: 1;
+    margin-inline: auto;
+    position: relative;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    border: 1px solid #d9ff6b42;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 42%, #173e31, #0a1b16 55%, #07120f 72%);
+    box-shadow: inset 0 0 5rem #d9ff6b0a, 0 0 5rem #00000066;
+    text-align: center;
+  }
+
+  .hero-capital .pool {
+    border-color: #f2a65a52;
+    background: radial-gradient(circle at 50% 42%, #4b3020, #1d1913 55%, #07120f 72%);
+  }
+
+  .pool::before,
+  .pool::after {
+    content: "";
+    position: absolute;
+    inset: 12%;
+    border: 1px solid #ffffff17;
+    border-radius: 43% 57% 52% 48% / 58% 45% 55% 42%;
+    transform: rotate(19deg);
+  }
+
+  .pool::after {
+    inset: 22%;
+    transform: rotate(-27deg);
+  }
+
+  .pool-label {
+    color: #d9ff6b;
+    font-size: 0.66rem;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+  }
+
+  .hero-capital .pool-label {
+    color: #f2a65a;
+  }
+
+  .pool strong {
+    margin-block: 0.4rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.3rem, 5vw, 4.2rem);
+    font-weight: 400;
+    line-height: 0.84;
+    letter-spacing: -0.055em;
+  }
+
+  .pool small {
+    color: #8d9a93;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
+  .orbit {
+    position: absolute;
+    width: 0.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #d9ff6b;
+    box-shadow: 0 0 1rem #d9ff6b;
+  }
+
+  .hero-capital .orbit {
+    background: #f2a65a;
+    box-shadow: 0 0 1rem #f2a65a;
+  }
+
+  .orbit b {
+    position: absolute;
+    color: #8e9a94;
+    font-size: 0.55rem;
+    font-style: normal;
+    letter-spacing: 0.16em;
+    white-space: nowrap;
+  }
+
+  .orbit-one { top: 4%; left: 50%; }
+  .orbit-one b { top: 1rem; left: 50%; transform: translateX(-50%); }
+  .orbit-two { top: 48%; right: 2%; }
+  .orbit-two b { right: 1rem; top: 50%; transform: translateY(-50%); }
+  .orbit-three { bottom: 4%; left: 48%; }
+  .orbit-three b { bottom: 1rem; left: 50%; transform: translateX(-50%); }
+  .orbit-four { top: 48%; left: 2%; }
+  .orbit-four b { left: 1rem; top: 50%; transform: translateY(-50%); }
+
+  @media (max-width: 58rem) {
+    .hero {
+      min-height: auto;
+    }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+    }
+
+    h1 {
+      max-width: 12ch;
+    }
+
+    .pool {
+      width: min(22rem, 90vw);
+    }
+  }
+
+  @media (max-width: 32rem) {
+    .hero {
+      padding-top: 2.5rem;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 15vw, 4.6rem);
+    }
+
+    .actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .actions a {
+      width: 100%;
+    }
+
+    .primary {
+      justify-content: space-between !important;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .pool::before { animation: drift 18s linear infinite; }
+    .pool::after { animation: drift 24s linear infinite reverse; }
+  }
+
+  @keyframes drift {
+    to { transform: rotate(379deg); }
+  }
+</style>

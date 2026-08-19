@@ -1,0 +1,286 @@
+---
+interface Props {
+  variant?: "hifas" | "capital";
+}
+
+const { variant = "hifas" } = Astro.props;
+---
+
+<section class:list={["architecture", `architecture-${variant}`]} id="piscina">
+  <div class="section-head">
+    <p class="kicker">02 / PRIMEIRO ARTEFATO</p>
+    <h2>Uma piscina onde recurso parado vira movimento.</h2>
+    <p>
+      A PCdRC coordena acesso compartilhado a recursos financeiros e não
+      financeiros. Pessoas, projetos e territórios tornam visível o que podem
+      oferecer, o que precisam e o valor que já geraram.
+    </p>
+  </div>
+
+  <div class="flow" aria-label="Fluxo proposto da piscina comum">
+    <article>
+      <span class="step">ENTRA</span>
+      <strong>Recursos</strong>
+      <p>Capital, tempo, conhecimento, espaços, ferramentas e acesso.</p>
+    </article>
+    <i aria-hidden="true">↘</i>
+    <article class="core">
+      <span class="step">COORDENA</span>
+      <strong>PCdRC</strong>
+      <p>Regras explícitas, rastreabilidade e decisão distribuída.</p>
+    </article>
+    <i aria-hidden="true">↘</i>
+    <article>
+      <span class="step">ATIVA</span>
+      <strong>Hifas</strong>
+      <p>Projetos e experimentos conectados por propósito e território.</p>
+    </article>
+    <i aria-hidden="true">↘</i>
+    <article>
+      <span class="step">RETORNA</span>
+      <strong>Valor</strong>
+      <p>Impacto registrado, aprendizado comum e reconhecimento retroativo.</p>
+    </article>
+  </div>
+
+  <div class="mechanisms">
+    <article>
+      <div><span>QF</span><small>em especificação</small></div>
+      <h3>Comunidade pesa mais que concentração</h3>
+      <p>Quadratic Funding privilegia amplitude de apoio, não apenas tamanho do cheque.</p>
+    </article>
+    <article>
+      <div><span>Q/ACC</span><small>em especificação</small></div>
+      <h3>Colaboração entre hifas</h3>
+      <p>Recursos circulam entre verticais para reduzir silos e aumentar capacidade coletiva.</p>
+    </article>
+    <article>
+      <div><span>RETRO</span><small>em especificação</small></div>
+      <h3>Valor reconhecido depois da prova</h3>
+      <p>RetroPGF recompensa contribuições que demonstraram impacto real ao longo do tempo.</p>
+    </article>
+  </div>
+
+  <p class="disclosure">
+    Estado atual: a piscina está em formação com pessoas reais. A arquitetura técnica está
+    especificada, mas rede, estrutura jurídica e controles para fundos reais ainda dependem de decisão e implementação.
+  </p>
+</section>
+
+<style>
+  .architecture {
+    padding: clamp(5rem, 10vw, 9rem) 1rem;
+    background: #0a1914;
+    color: #f1ecdf;
+  }
+
+  .section-head,
+  .flow,
+  .mechanisms,
+  .disclosure {
+    width: min(100%, 80rem);
+    margin-inline: auto;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(8rem, 0.55fr) minmax(18rem, 1.35fr) minmax(16rem, 0.85fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .kicker {
+    color: #d9ff6b;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+  }
+
+  .architecture-capital .kicker,
+  .architecture-capital .core .step {
+    color: #f2a65a;
+  }
+
+  h2 {
+    max-width: 14ch;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.7rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  .section-head > p:last-child {
+    color: #9cacA3;
+    line-height: 1.75;
+  }
+
+  .flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: stretch;
+    gap: 0.65rem;
+    margin-top: clamp(4rem, 8vw, 7rem);
+  }
+
+  .flow article {
+    min-height: 15rem;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ffffff17;
+    border-radius: 1.25rem;
+    background: #ffffff05;
+  }
+
+  .flow .core {
+    border-color: #d9ff6b55;
+    background: #d9ff6b0b;
+  }
+
+  .architecture-capital .flow .core {
+    border-color: #f2a65a66;
+    background: #f2a65a0b;
+  }
+
+  .flow > i {
+    align-self: center;
+    color: #65736c;
+    font-style: normal;
+  }
+
+  .step {
+    color: #6f7d76;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+  }
+
+  .core .step {
+    color: #d9ff6b;
+  }
+
+  .flow strong {
+    margin-top: auto;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  .flow p {
+    margin-top: 0.55rem;
+    color: #8f9d96;
+    font-size: 0.8rem;
+    line-height: 1.55;
+  }
+
+  .mechanisms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: clamp(4rem, 8vw, 7rem);
+    border-top: 1px solid #ffffff17;
+  }
+
+  .mechanisms article {
+    padding: 2rem 2rem 0;
+    border-left: 1px solid #ffffff17;
+  }
+
+  .mechanisms article:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .mechanisms div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .mechanisms div span {
+    color: #d9ff6b;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+  }
+
+  .architecture-capital .mechanisms div span {
+    color: #f2a65a;
+  }
+
+  .mechanisms small {
+    color: #66736c;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin-top: 2rem;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .mechanisms p {
+    margin-top: 0.75rem;
+    color: #8f9d96;
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+
+  .disclosure {
+    margin-top: 4rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid #ffffff14;
+    border-radius: 0.8rem;
+    color: #7f8d86;
+    font-size: 0.72rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 64rem) {
+    .section-head {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    .section-head > p:last-child {
+      grid-column: 2;
+    }
+
+    .flow {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .flow > i {
+      display: none;
+    }
+  }
+
+  @media (max-width: 42rem) {
+    .section-head,
+    .flow,
+    .mechanisms {
+      grid-template-columns: 1fr;
+    }
+
+    .section-head > p:last-child {
+      grid-column: auto;
+    }
+
+    .flow article {
+      min-height: 12rem;
+    }
+
+    .mechanisms {
+      border-top: 0;
+    }
+
+    .mechanisms article,
+    .mechanisms article:first-child {
+      padding: 1.75rem 0;
+      border-top: 1px solid #ffffff17;
+      border-left: 0;
+    }
+  }
+</style>

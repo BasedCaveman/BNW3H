@@ -1,0 +1,78 @@
+<footer>
+  <a class="brand" href="/">
+    <strong>BOSSA NOVA<sup>3</sup></strong>
+    <span>WEB3 HUB</span>
+  </a>
+  <p>Fundado por Marcelo. Facilitado pela ReReGeneradora.</p>
+  <nav aria-label="Links do rodapé">
+    <a href="/#piscina">PCdRC</a>
+    <a href="/#territorio">Território</a>
+    <a href="/capital">Capital</a>
+  </nav>
+</footer>
+
+<style>
+  footer {
+    width: min(100% - 2rem, 80rem);
+    min-height: 8rem;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background: #07120f;
+    color: #f1ecdf;
+  }
+
+  .brand {
+    display: grid;
+    text-decoration: none;
+  }
+
+  .brand strong {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+  }
+
+  .brand sup {
+    color: #d9ff6b;
+  }
+
+  .brand span {
+    color: #708078;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+  }
+
+  p {
+    color: #708078;
+    font-size: 0.68rem;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  nav a {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    color: #9eaaa4;
+    font-size: 0.68rem;
+    text-decoration: none;
+  }
+
+  @media (max-width: 42rem) {
+    footer {
+      padding-block: 2rem;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    p {
+      text-align: left;
+    }
+  }
+</style>
