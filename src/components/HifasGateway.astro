@@ -1,0 +1,44 @@
+---
+interface Props { primary?: boolean; }
+const { primary = false } = Astro.props;
+const Heading = primary ? "h1" : "h2";
+
+const hifas = [
+  ["clima", "Resiliência climática", "Dados, adaptação territorial e infraestrutura para responder ao que já mudou."],
+  ["alimento", "Soberania alimentar", "Agrofloresta, cadeias curtas e alimento como tecnologia de autonomia."],
+  ["biomas", "Restauração de biomas", "Cuidado ecológico, regeneração urbana e recuperação de paisagens vivas."],
+  ["energia", "Energias renováveis", "Soluções distribuídas que ampliam autonomia e capacidade local."],
+  ["ia", "IA descentralizada", "Inteligência compartilhada com dados, protocolos e benefícios mais distribuídos."],
+  ["depin", "DePIN", "Infraestrutura física coordenada por redes, presença e incentivos verificáveis."],
+  ["desci", "DeSci", "Ciência aberta, pesquisa aplicada e novos modos de financiar conhecimento."],
+  ["salutogenia", "Salutogenia", "Saúde como produção contínua de condições para viver, criar e pertencer."],
+];
+---
+
+<div class="gateway-field hifas-field" id="hifas" data-section="hifas" data-primary={primary ? "true" : "false"}>
+  <div class="field-copy" data-reveal>
+    <p class="eyebrow orange">Hifas</p>
+    <Heading>Seu recurso<br />tem onde<br />criar raiz<span class="orange">.</span></Heading>
+    <p class="lead">Escolha uma frente. Declare o que traz.<br />Construa reciprocidade.</p>
+  </div>
+  <div class="constellation" data-reveal>
+    <img src="/art/hifas-constellation.png" alt="Constelação de oito hifas conectadas por uma rede micelial" width="1254" height="1254" />
+  </div>
+  <div class="hifa-selector" data-reveal>
+    <p class="hifa-selector-label">Escolha uma hifa</p>
+    <div class="hifa-tabs" role="tablist" aria-label="Escolha uma hifa">
+      {hifas.map(([id, title], index) => (
+        <button type="button" role="tab" id={`tab-${id}`} aria-controls={`panel-${id}`} aria-selected={index === 0 ? "true" : "false"} tabindex={index === 0 ? "0" : "-1"} data-hifa={id}>{title}</button>
+      ))}
+    </div>
+    <div class="hifa-panels">
+      {hifas.map(([id, title, copy], index) => (
+        <div role="tabpanel" id={`panel-${id}`} aria-labelledby={`tab-${id}`} hidden={index !== 0}>
+          <span>Hifa ativa</span><strong>{title}</strong><p>{copy}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+  <p class="resource-line" data-reveal>Tempo · conhecimento · espaço · código · cuidado · capital</p>
+  <a class="cta cta-orange" href="#participar" data-reveal><span>Localizar minha contribuição</span><i>Entrar por uma hifa</i></a>
+</div>

@@ -167,3 +167,15 @@ O roadmap não deve usar datas inventadas. Até haver cronograma aprovado, ele f
 - Verificação de contraste, foco, leitura mobile e preferência por movimento reduzido.
 - Definição do canal público de contato antes de publicação.
 
+## 7. Direção consolidada após QA visual
+
+Conceito: **Dossiê vivo / Cartaz do comum**.
+
+- Capital funciona como um caderno de diligência: preciso, silencioso, rastreável e orientado a decisão.
+- Hifas funciona como um cartaz de convocação: cultural, tátil, territorial e orientado a agência.
+- Bossa Protocol é a lombada comum entre os dois impressos, não uma terceira marca concorrente.
+- O grid decorativo foi removido. A materialidade vem do papel, do grão sutil e de manchas cromáticas não repetitivas.
+- Inter Tight passa a conduzir Capital; Barlow Condensed conduz Hifas e Bossa Protocol; IBM Plex Mono permanece nos registros e estados.
+- A rota `/` começa semanticamente e visualmente por Hifas. A rota `/capital` começa por Capital. O campo secundário é uma porta real, mas não disputa a mesma hierarquia.
+- A constelação preserva uma zona livre antes dos controles: pelo menos 40 px em desktop e 24 px em mobile.
+- O laranja é assinatura e ação. Azul e teal diferenciam função e horizonte sem competir com a marca.

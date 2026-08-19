@@ -50,16 +50,16 @@ html[data-theme="tarde"] {
 }
 
 html[data-theme="noite"] {
-  --paper: #0f1725;
-  --paper-deep: #151f31;
-  --ink: #f3eee5;
-  --ink-muted: #aab1bb;
+  --paper: #101217;
+  --paper-deep: #191b21;
+  --ink: #f3eadf;
+  --ink-muted: #b1aaa1;
   --line: rgba(232, 237, 245, 0.2);
   --line-strong: rgba(232, 237, 245, 0.62);
   --orange: #ff7130;
   --orange-soft: #ff8a52;
-  --blue: #7792ff;
-  --teal: #58b7bc;
+  --blue: #879cff;
+  --teal: #65bbb6;
   --surface: rgba(255, 255, 255, 0.045);
   --shadow: rgba(0, 0, 0, 0.34);
   color-scheme: dark;
@@ -95,7 +95,7 @@ body::before {
   mix-blend-mode: multiply;
 }
 
-html[data-theme="noite"] body::before { opacity: 0.12; mix-blend-mode: screen; }
+html[data-theme="noite"] body::before { opacity: 0.09; mix-blend-mode: screen; }
 img, picture, video { display: block; max-width: 100%; }
 button, input, textarea, select { color: inherit; font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }

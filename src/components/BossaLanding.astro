@@ -1,19 +1,17 @@
 ---
 import "../styles/bossa.css";
+import CapitalGateway from "./CapitalGateway.astro";
+import HifasGateway from "./HifasGateway.astro";
+import ProtocolSpine from "./ProtocolSpine.astro";
 
 interface Props { initialFocus?: "capital" | "hifas"; }
 const { initialFocus = "hifas" } = Astro.props;
-
-const hifas = [
-  ["clima", "Resiliência climática", "Dados, adaptação territorial e infraestrutura para responder ao que já mudou."],
-  ["alimento", "Soberania alimentar", "Agrofloresta, cadeias curtas e alimento como tecnologia de autonomia."],
-  ["biomas", "Restauração de biomas", "Cuidado ecológico, regeneração urbana e recuperação de paisagens vivas."],
-  ["energia", "Energias renováveis", "Soluções distribuídas que ampliam autonomia e capacidade local."],
-  ["ia", "IA descentralizada", "Inteligência compartilhada com dados, protocolos e benefícios mais distribuídos."],
-  ["depin", "DePIN", "Infraestrutura física coordenada por redes, presença e incentivos verificáveis."],
-  ["desci", "DeSci", "Ciência aberta, pesquisa aplicada e novos modos de financiar conhecimento."],
-  ["salutogenia", "Salutogenia", "Saúde como produção contínua de condições para viver, criar e pertencer."],
-];
+const entryNav = initialFocus === "hifas"
+  ? [["hifas", "Hifas"], ["capital", "Capital"]]
+  : [["capital", "Capital"], ["hifas", "Hifas"]];
+const intentActions = initialFocus === "hifas"
+  ? [["hifa", "Quero contribuir em uma hifa"], ["capital", "Quero aportar capital"]]
+  : [["capital", "Quero aportar capital"], ["hifa", "Quero contribuir em uma hifa"]];
 ---
 
 <div class="site-shell" data-initial-focus={initialFocus}>
@@ -25,8 +23,7 @@ const hifas = [
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
     <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
-      <a href="#capital" data-nav="capital">Capital</a>
-      <a href="#hifas" data-nav="hifas">Hifas</a>
+      {entryNav.map(([id, label]) => <a href={`#${id}`} data-nav={id}>{label}</a>)}
       <a href="#protocol" data-nav="protocol">Bossa Protocol</a>
       <a href="#sobre" data-nav="sobre">Sobre</a>
       <span class="nav-indicator" aria-hidden="true"></span>
@@ -40,75 +37,11 @@ const hifas = [
 
   <main id="conteudo">
     <section class="gateway" id="inicio" aria-label="Duas portas de entrada para o Bossa Nova Web3 Hub">
-      <div class="gateway-field capital-field" id="capital" data-section="capital">
-        <div class="coordinate" aria-hidden="true">22°54′15″S<br />43°12′39″W</div>
-        <div class="field-copy" data-reveal>
-          <p class="eyebrow blue">Capital</p>
-          <h1>Capital para<br />o que precisa<br />durar<span class="blue">.</span></h1>
-          <p class="lead">Risco visível. Recurso rastreável.<br />Impacto verificável.</p>
-        </div>
-
-        <div class="capital-flow" data-reveal>
-          <p class="micro-title blue">Fluxo correto</p>
-          <ol>
-            <li><span>01</span><strong>Capital</strong><small>propósito claro</small></li>
-            <li><span>02</span><strong>Protocolo</strong><small>regras explícitas</small></li>
-            <li><span>03</span><strong>Hifas</strong><small>alocação localizada</small></li>
-            <li><span>04</span><strong>Valor</strong><small>evidência verificável</small></li>
-          </ol>
-        </div>
-
-        <div class="evidence" data-reveal>
-          <p class="micro-title blue">Evidência &amp; gates</p>
-          <div class="evidence-grid">
-            <article><b>01</b><strong>Alocação diligente</strong><p>Recursos chegam com propósito e responsabilidades claros.</p></article>
-            <article><b>02</b><strong>Fluxo rastreável</strong><p>Entradas, alocações e destinos dos recursos.</p></article>
-            <article><b>03</b><strong>Impacto verificável</strong><p>Evidência, aprendizado e novos ciclos.</p></article>
-          </div>
-        </div>
-        <a class="cta cta-blue" href="#tese-capital" data-reveal><span>Conhecer a tese</span><i>Capital de impacto + liquidez onchain</i></a>
-      </div>
-
-      <aside class="protocol-spine" aria-label="Bossa Protocol" data-reveal>
-        <div class="protocol-core">
-          <p>Bossa</p><p>Protocol</p>
-          <span>artefatos + mecânicas para coordenar recursos</span>
-        </div>
-        <p class="protocol-note">O Bossa Protocol agrega artefatos e mecânicas. A PCdRC é seu primeiro artefato em formação.</p>
-        <div class="artifact-list">
-          <button type="button" class="artifact is-current" aria-expanded="true"><span>PCdRC</span><small>primeiro artefato</small><b>Agora</b></button>
-          <button type="button" class="artifact" aria-expanded="false"><span>QF / Q/ACC</span><small>alocação</small><b>Em desenho</b></button>
-          <button type="button" class="artifact" aria-expanded="false"><span>RetroPGF</span><small>reconhecimento</small><b>Em desenho</b></button>
-          <button type="button" class="artifact" aria-expanded="false"><span>Governança</span><small>decisão</small><b>Em desenho</b></button>
-        </div>
-      </aside>
-
-      <div class="gateway-field hifas-field" id="hifas" data-section="hifas">
-        <div class="field-copy" data-reveal>
-          <p class="eyebrow orange">Hifas</p>
-          <h2>Seu recurso<br />tem onde<br />criar raiz<span class="orange">.</span></h2>
-          <p class="lead">Escolha uma frente. Declare o que traz.<br />Construa reciprocidade.</p>
-        </div>
-        <div class="constellation" data-reveal>
-          <img src="/art/hifas-constellation.png" alt="Constelação de oito hifas conectadas por uma rede micelial" width="1254" height="1254" />
-        </div>
-        <div class="hifa-selector" data-reveal>
-          <div class="hifa-tabs" role="tablist" aria-label="Escolha uma hifa">
-            {hifas.map(([id, title], index) => (
-              <button type="button" role="tab" id={`tab-${id}`} aria-controls={`panel-${id}`} aria-selected={index === 0 ? "true" : "false"} tabindex={index === 0 ? "0" : "-1"} data-hifa={id}>{title}</button>
-            ))}
-          </div>
-          <div class="hifa-panels">
-            {hifas.map(([id, title, copy], index) => (
-              <div role="tabpanel" id={`panel-${id}`} aria-labelledby={`tab-${id}`} hidden={index !== 0}>
-                <span>Hifa ativa</span><strong>{title}</strong><p>{copy}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <p class="resource-line" data-reveal>Tempo · conhecimento · espaço · código · cuidado · capital</p>
-        <a class="cta cta-orange" href="#participar" data-reveal><span>Localizar minha contribuição</span><i>Entrar por uma hifa</i></a>
-      </div>
+      {initialFocus === "hifas" ? (
+        <><HifasGateway primary /><ProtocolSpine /><CapitalGateway /></>
+      ) : (
+        <><CapitalGateway primary /><ProtocolSpine /><HifasGateway /></>
+      )}
     </section>
 
     <section class="protocol-section section-frame" id="protocol" data-section="protocol">
@@ -186,8 +119,7 @@ const hifas = [
         <h2>Como você quer contribuir?</h2>
         <p>Escolha sua porta de entrada. O canal direto de manifestação será conectado antes da publicação.</p>
         <div class="participate-actions" role="group" aria-label="Escolha como quer participar">
-          <button type="button" data-intent="capital">Quero aportar capital</button>
-          <button type="button" data-intent="hifa">Quero contribuir em uma hifa</button>
+          {intentActions.map(([intent, label]) => <button type="button" data-intent={intent}>{label}</button>)}
         </div>
         <output class="intent-output" aria-live="polite">Selecione uma porta de entrada para preparar sua manifestação.</output>
       </div>
@@ -202,11 +134,10 @@ const hifas = [
 </div>
 
 <script>
-  const shell = document.querySelector<HTMLElement>(".site-shell");
   const root = document.documentElement;
   const metaTheme = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
   const themeButtons = [...document.querySelectorAll<HTMLButtonElement>("[data-set-theme]")];
-  const themeColors: Record<string, string> = { manha: "#f3efe7", tarde: "#e8d2b3", noite: "#0f1725" };
+  const themeColors: Record<string, string> = { manha: "#f3efe7", tarde: "#e8d2b3", noite: "#101217" };
   const syncThemeButtons = (theme: string) => {
     themeButtons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.setTheme === theme)));
     if (metaTheme) metaTheme.content = themeColors[theme] || themeColors.manha;
@@ -314,5 +245,4 @@ const hifas = [
       : "Porta selecionada: hifas. Próximo passo: conectar a cartografia de recursos e disponibilidade.";
   }));
 
-  if (shell?.dataset.initialFocus === "capital" && location.pathname.startsWith("/capital")) requestAnimationFrame(() => document.getElementById("capital")?.scrollIntoView({ block: "start" }));
 </script>
