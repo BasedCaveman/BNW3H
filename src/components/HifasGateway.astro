@@ -1,7 +1,6 @@
 ---
 interface Props { primary?: boolean; }
 const { primary = false } = Astro.props;
-const Heading = primary ? "h1" : "h2";
 
 const hifas = [
   ["clima", "Resiliência climática", "Dados, adaptação territorial e infraestrutura para responder ao que já mudou."],
@@ -18,7 +17,7 @@ const hifas = [
 <div class="gateway-field hifas-field" id="hifas" data-section="hifas" data-primary={primary ? "true" : "false"}>
   <div class="field-copy" data-reveal>
     <p class="eyebrow orange">Hifas</p>
-    <Heading>Seu recurso<br />tem onde<br />criar raiz<span class="orange">.</span></Heading>
+    <h2>Seu recurso<br />tem onde<br />criar raiz<span class="orange">.</span></h2>
     <p class="lead">Escolha uma frente. Declare o que traz.<br />Construa reciprocidade.</p>
   </div>
   <div class="constellation" data-reveal>

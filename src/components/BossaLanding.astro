@@ -2,6 +2,7 @@
 import "../styles/bossa.css";
 import CapitalGateway from "./CapitalGateway.astro";
 import HifasGateway from "./HifasGateway.astro";
+import HubOrientation from "./HubOrientation.astro";
 import ProtocolSpine from "./ProtocolSpine.astro";
 
 interface Props { initialFocus?: "capital" | "hifas"; }
@@ -18,8 +19,8 @@ const intentActions = initialFocus === "hifas"
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="topbar" data-header>
-    <a class="logo" href="#inicio" aria-label="Bossa Nova Web3 Hub — início">
-      <img src="/brand/bossa-nova3-hub-logo.jpeg" alt="Bossa Nova3 Hub" width="500" height="500" />
+    <a class="logo" href="#inicio" aria-label="BossaNova3 HUB — início">
+      <img src="/brand/bossanova3-hub-logo-transparent.png" alt="BossaNova3 HUB" width="500" height="500" />
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
     <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
@@ -36,7 +37,8 @@ const intentActions = initialFocus === "hifas"
   </header>
 
   <main id="conteudo">
-    <section class="gateway" id="inicio" aria-label="Duas portas de entrada para o Bossa Nova Web3 Hub">
+    <section class="gateway" id="inicio" aria-label="Duas portas de entrada para o BossaNova3 HUB">
+      <HubOrientation focus={initialFocus} />
       {initialFocus === "hifas" ? (
         <><HifasGateway primary /><ProtocolSpine /><CapitalGateway /></>
       ) : (
@@ -92,7 +94,7 @@ const intentActions = initialFocus === "hifas"
       <div class="section-copy" data-reveal>
         <p class="eyebrow orange">Sobre o Hub</p>
         <h2>Uma plataforma viva entre tecnologia, cultura, território e impacto real.</h2>
-        <p>O BNW3H funciona como um orquestrador de valor: conecta criadores, investidores, comunidades, iniciativas culturais e ambientais — traduzindo inovação em transformação concreta, local e global.</p>
+        <p>O BN3 HUB funciona como um orquestrador de valor: conecta criadores, investidores, comunidades, iniciativas culturais e ambientais — traduzindo inovação em transformação concreta, local e global.</p>
       </div>
       <div class="about-principles" data-reveal>
         <article><span>01</span><strong>Território antes da abstração</strong><p>Joatinga e Maré como origem e horizonte de experimentação.</p></article>
@@ -107,7 +109,7 @@ const intentActions = initialFocus === "hifas"
       </div>
       <div class="facilitator-copy" data-reveal>
         <p class="eyebrow orange">Facilitação</p>
-        <h2 id="facilitator-title">BNW3H é o organismo.<br /><span>[Re]3 facilita.</span></h2>
+        <h2 id="facilitator-title">BN3 HUB é o organismo.<br /><span>[Re]3 facilita.</span></h2>
         <p>O Hub mantém marca, território, operação, governança e direitos econômicos próprios. A [Re]3 apoia leitura de contexto, desenho de governança e acesso a conexões — sem assumir propriedade, economia ou autoridade do projeto.</p>
         <small>Compartilhar um campo não significa compartilhar automaticamente operação, capital, IP, estrutura legal ou métricas.</small>
       </div>
@@ -127,8 +129,8 @@ const intentActions = initialFocus === "hifas"
   </main>
 
   <footer>
-    <img src="/brand/bossa-nova3-hub-logo.jpeg" alt="Bossa Nova3 Hub" width="500" height="500" />
-    <p>BNW3H é o organismo. <strong>[Re]3</strong> facilita.</p>
+    <img src="/brand/bossanova3-hub-logo-transparent.png" alt="BossaNova3 HUB" width="500" height="500" />
+    <p>BN3 HUB é o organismo. <strong>[Re]3</strong> facilita.</p>
     <p class="footer-meta">Rio de Janeiro · versão 0.1 · tese em formação</p>
   </footer>
 </div>

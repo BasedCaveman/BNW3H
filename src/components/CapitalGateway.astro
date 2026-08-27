@@ -1,14 +1,13 @@
 ---
 interface Props { primary?: boolean; }
 const { primary = false } = Astro.props;
-const Heading = primary ? "h1" : "h2";
 ---
 
 <div class="gateway-field capital-field" id="capital" data-section="capital" data-primary={primary ? "true" : "false"}>
   <div class="coordinate" aria-hidden="true">22°54′15″S<br />43°12′39″W</div>
   <div class="field-copy" data-reveal>
     <p class="eyebrow blue">Capital</p>
-    <Heading>Capital para<br />o que precisa<br />durar<span class="blue">.</span></Heading>
+    <h2>Capital para<br />o que precisa<br />durar<span class="blue">.</span></h2>
     <p class="lead">Risco visível. Recurso rastreável.<br />Impacto verificável.</p>
   </div>
 

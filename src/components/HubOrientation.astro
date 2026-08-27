@@ -1,0 +1,44 @@
+---
+interface Props { focus?: "capital" | "hifas"; }
+const { focus = "hifas" } = Astro.props;
+
+const content = focus === "capital"
+  ? {
+      headline: "Capital com contexto pode sustentar o que precisa durar.",
+      relevance: "Aqui, investidores de impacto, degens e regens encontram uma tese comum: risco legível, fluxos rastreáveis e impacto verificável.",
+      primaryHref: "#capital",
+      primaryLabel: "Ver a porta de capital",
+      secondaryHref: "/",
+      secondaryLabel: "Também quero contribuir",
+    }
+  : {
+      headline: "Recursos dispersos podem virar capacidade coletiva.",
+      relevance: "Aqui, tempo, conhecimento, acesso, infraestrutura e capital encontram frentes reais para criar raiz — com reciprocidade, governança e transparência.",
+      primaryHref: "#hifas",
+      primaryLabel: "Encontrar minha hifa",
+      secondaryHref: "/capital",
+      secondaryLabel: "Tenho capital para ativar",
+    };
+---
+
+<section class="hub-orientation" aria-labelledby="hub-definition-title" data-reveal>
+  <div class="orientation-mark" aria-hidden="true">
+    <span>BN3 HUB / 001</span>
+    <strong>O que é</strong>
+  </div>
+
+  <div class="orientation-copy">
+    <p class="orientation-eyebrow">BossaNova3 HUB · Rio de Janeiro</p>
+    <h1 id="hub-definition-title">{content.headline}</h1>
+    <p>Um hub de inovação cybercultural e regenerativa na interseção entre tecnologia, cultura, território e impacto real.</p>
+  </div>
+
+  <div class="orientation-relevance">
+    <span>Por que importa para você</span>
+    <p>{content.relevance}</p>
+    <div class="orientation-actions">
+      <a class="orientation-primary" href={content.primaryHref}>{content.primaryLabel}</a>
+      <a href={content.secondaryHref}>{content.secondaryLabel}</a>
+    </div>
+  </div>
+</section>
